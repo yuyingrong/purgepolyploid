@@ -1,2 +1,3 @@
-# scRNAseq
-scripts for single cell RNA sequencing data analysis
+# Purge Polyploid
+example scripts and analyses
+TBA
