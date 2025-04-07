@@ -5,7 +5,9 @@ Yuying Rong
 
 After aligning split contigs all-vs-all, I wanted to view how contigs aligned to each other and where the aligned regions are within the contigs. 
 
-Therefore, I carved out a random contig from the (filtered) alignment file. 
+## Preparations
+
+I carved out a random contig from the (filtered) alignment file to view all its alignments. 
 
 ```sh
 # bash
@@ -13,7 +15,7 @@ Therefore, I carved out a random contig from the (filtered) alignment file.
 # first, filter the alignment file
 # by removing alignments <100 kb
 # this reduces the alignment file size from 59 G to 7.6 M,
-# faster for the demonstration
+# more manageable for a quick demonstration
 cat $path/outs/Altus.split.self.paf | awk -F "  " '$11 >= 100000' > $path/outs/Altus.split.self_100000.paf && echo "$(date +"%T"): awk: done"
 
 # then, extract all alignments to the chosen query contig
@@ -24,8 +26,6 @@ cat Altus.split.self_100000.paf | grep "^Altus_ch02_h0_290:1-5199970" | cut -f 1
 
 Now I have a file containing all alignments to contig "Altus_ch02_h0_290:1-5199970" as the query contig.
 
-
-### Preparations
 From this file, I want to get the start & end coordinates of alignments and of contigs. 
 
 Then I will calculate the coordinates in relation to the chosen query contig. 
@@ -120,7 +120,7 @@ len(contigs) == len(alignments)? True
 ```
 
 
-### Visualizing contigs and alignments
+## Visualizing contigs and alignments
 
 Now, I want to visualize the contigs and alignments (in a crude way).
 
@@ -218,7 +218,7 @@ contig: (1, 5199970); alignment: (0, 0)
                •••••••••••••••••••••••••
 ```
 
-### Depth of coverage by contigs
+## Depth of coverage by contigs
 
 Now I am also interested in knowing how many contigs overlap with each other per-interval:
 
