@@ -94,7 +94,7 @@ def array_contigs_alignments(rows):
     return array, contigs, alignments
 
 
-f = open('/Users/shell/MSc/WUR/paf/Altus_ch02_h0_290_1-5199970_100000.paf', 'r')
+f = open('/path/to/Altus_ch02_h0_290_1-5199970_100000.paf', 'r')
 
 array, contigs, alignments = array_contigs_alignments(f)
 
